@@ -1,27 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import userImage from './images/him.jpeg';
 
+// Dummy image for example
+const userImage = 'https://via.placeholder.com/150';
 
 const headerStyle = {
   backgroundColor: 'cyan',
-  fontFamily: 'Helvetic Neue',
-  padding:25,
+  fontFamily: 'Helvetica Neue',
+  padding: 25,
   lineHeight: 1.5
-}
+};
 
 const header = (
   <header style={headerStyle}>
     <h1>Welcome to React JS</h1>
     <h2>Second React session</h2>
-    <p>First session for react</p>
+    <p>First session for React</p>
     <small>April 28, 2022</small>
   </header>
 );
 
 const main = (
   <main>
-    <p>This is the first para for the development of react application</p>
+    <p>This is the first paragraph for the development of a React application</p>
     <ul>
       <li>HTML</li>
       <li>CSS</li>
@@ -38,7 +39,7 @@ const footer = (
 
 const user = (
   <div>
-    <img src={userImage} alt='Himanshu' />
+    <img src={userImage} alt="Himanshu" style={{ width: 150, height: 150, borderRadius: '50%' }} />
   </div>
 );
 
@@ -51,8 +52,5 @@ const app = (
   </div>
 );
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  app
-);
+root.render(app);
