@@ -21,59 +21,42 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
     <script type="text/babel">
-        // console.log(React);
-
         const rootElement = document.querySelector('.root');
 
-        // const singleElement = <h1>First React Application</h1>
+// Inline style objects
+const styles = {
+  header: {
+    border: '2px solid red',
+    color: 'white',
+    backgroundColor: 'black',
+    padding: '1rem'
+  },
+  main: {
+    backgroundColor: 'cyan',
+    padding: '1rem'
+  },
+  footer: {
+    backgroundColor: 'black',
+    color: 'white',
+    padding: '1rem',
+    textAlign: 'center'
+  }
+};
 
-        const header = (
-            <header
-                style={{ border: "2px solid red", color: "white", backgroundColor: "black" }}
-            >
-                <h1>React App</h1>
-                <h2>First Session of React and JSX</h2>
-                <p>Abhishek Yadav</p>
-                <small>April 25, 2022</small>
-            </header>
-        );
+// JSX Components
+const Header = () => (
+  <header style={styles.header}>
+    <h1>React App</h1>
+    <h2>First Session of React and JSX</h2>
+    <p>Abhishek Yadav</p>
+    <small>April 25, 2022</small>
+  </header>
+);
 
-        const mainStyle = {
-            backgroundColor: "cyan",
-        }
+const Main = () => (
+  <main style={styles.main}>
+    <p>This is a React and ReactDOM SPA. SPA stands for Single Page Application.</p>
 
-        const main = (
-            <main style={mainStyle}>
-                <p>This is react and react-dom SPA. SPA stands for Single Page Application</p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-            </main>
-        );
-
-        const footerStyle = {
-            backgroundColor: "black",
-            color: "white"
-        }
-
-        const footer = (
-            <footer style={footerStyle}>
-                <p>Copyright 2022</p>
-            </footer>
-        );
-
-        const x = "this is indore";
-
-        const app = (
-            <div className="app">
-                {header}
-                {main}
-                {footer}
-                <h1>{x}</h1>
-            </div>
-        );
 
     
 
