@@ -35,17 +35,24 @@ const HexaColor = () => (
 
 
 
-
-
 const headerStyle = {
   backgroundColor: 'cyan',
-  fontFamily: 'Helvetic Neue',
-  padding:25,
+  fontFamily: 'Helvetica Neue',
+  padding: 25,
   lineHeight: 1.5
-}
+};
 
+// Data
+const welcome = "Welcome to React";
+const title = "Learning React Components";
+const subtitle = "This is a functional component";
+const student = {
+  firstname: "Abhishek",
+  lastname: "Yadav"
+};
+const date = "July 29, 2025";
 
-// React Componenet
+// React Component
 const Header = () => {
   return (
     <header style={headerStyle}>
@@ -56,7 +63,7 @@ const Header = () => {
       <small>{date}</small>
     </header>
   );
-}
+};
 
 const UserCard = () => (
     <div>
