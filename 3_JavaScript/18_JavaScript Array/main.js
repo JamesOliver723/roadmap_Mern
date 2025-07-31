@@ -77,28 +77,22 @@ fab.shift();
 console.log(fab[0]);
 
 console.log(fab.length);
+let fab = ['july', 'aug'];
+fab.unshift('holi'); // ["holi", "july", "aug"]
+console.log(fab);
 
-// unshift
+let may = ['orange', 'apple', 'banana', 'june'];
 
-fab.unshift("holi");
-// alert(fab);
-
-// for loop
-
-let may = ['orange', 'apple', 'banana', "june"];
-
-// for(let i = 0 ; i< may.length ; i++ ){
-//     alert(may[i]);
-// }
-
-
-for (let y in may){
-    console.log(y);
+// Using for...in (indexes)
+for (let i in may) {
+  console.log(`Index: ${i}`); // 0, 1, 2, 3
 }
 
-for(let r of may){
-    console.log(r);
+// Using for...of (values)
+for (let fruit of may) {
+  console.log(`Fruit: ${fruit}`); // orange, apple, banana, june
 }
+
 
 let m = [
     [1,2,3],
