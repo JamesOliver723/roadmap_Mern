@@ -50,10 +50,6 @@ console.log(a);
 // console.log(t);
 
 
-// let is blocked scope
-// cannot be redeclared
-// 
-
 
 let r = 10;
 let s = 20;
