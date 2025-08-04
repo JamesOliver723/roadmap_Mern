@@ -52,34 +52,56 @@ class App extends Component{
         })
     }
 
-    render() {
-        return (
-            <div>
-                <h1>{this.state.message}</h1>
-                <button onClick={this.greetPeople}>Click here</button>
+  render() {
+  const {
+    message,
+    greetPeople,
+    handleClick,
+    handleMouseMove,
+    handleCopy,
+    handleKeyPress,
+    handleChange,
+    handleSubmit
+  } = this;
 
-                <button onClick={this.handleClick}>Click Event</button>
+  return (
+    <div className="app-container">
+      <h1>{message}</h1>
 
-                <button onMouseMove={this.handleMouseMove}>Move Mouse</button>
+      <section className="button-group">
+        <button type="button" onClick={greetPeople}>Greet</button>
+        <button type="button" onClick={handleClick}>Trigger Click</button>
+        <button type="button" onMouseMove={handleMouseMove}>Track Mouse</button>
+      </section>
 
-                <p onCopy={this.handleCopy}>
-                    check and copy this
-                </p>
+      <p onCopy={handleCopy} style={{ userSelect: 'text', cursor: 'copy' }}>
+        Try copying this text.
+      </p>
 
-                <input type='text' onKeyPress={this.handleKeyPress} />
+      <input
+        type="text"
+        placeholder="Type here"
+        onKeyPress={handleKeyPress}
+        aria-label="Typing Field"
+      />
 
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label htmlFor='firstname'>First Name: </label>
-                        <input name='firstname' onChange={this.handleChange} />
-                    </div>
-                    <div>
-                        <input type='submit' value='SUBMIT' />
-                    </div>
-                </form>
-            </div>
-        )
-    }
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="firstname">First Name:</label>
+          <input
+            id="firstname"
+            name="firstname"
+            type="text"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
+
 
 export default App
