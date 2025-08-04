@@ -64,34 +64,39 @@ import ReactDOM from 'react-dom/client';
 class App extends React.Component {
   state = {
     image: 'https://placekitten.com/200/300',
-  }
+  };
 
-  changeAnimal = () => {
-    let dog = 'https://placekitten.com/200/287'
-    let cat = 'https://placekitten.com/200/300'
+  catUrl = 'https://placekitten.com/200/300';
+  dogUrl = 'https://placekitten.com/200/287';
 
-    let image = this.state.image === cat ? dog : cat
-
-    this.setState({ image: image })
-  } 
+  toggleAnimal = () => {
+    this.setState((prevState) => ({
+      image: prevState.image === this.catUrl ? this.dogUrl : this.catUrl,
+    }));
+  };
 
   render() {
-    // const count = this.state.count
+    const { image } = this.state;
+    const isCat = image === this.catUrl;
+    const altText = isCat ? 'Cat' : 'Dog';
 
     return (
-      <div>
-        <h1>Cat and Dog</h1>
-        <div>
-          <img src={this.state.image} alt='animal' />
-        </div>
-        
-        <button onClick={this.changeAnimal} className="btn btn-add">
-          Change Animal
+      <main className="animal-switcher">
+        <h1>Cat and Dog Viewer</h1>
+
+        <figure>
+          <img src={image} alt={altText} width={200} height={300} />
+          <figcaption>Currently showing a {altText.toLowerCase()}</figcaption>
+        </figure>
+
+        <button onClick={this.toggleAnimal} className="btn btn-toggle">
+          Show {isCat ? 'Dog' : 'Cat'}
         </button>
-      </div>
-    )
+      </main>
+    );
   }
 }
+
 
 
 
