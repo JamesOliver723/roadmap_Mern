@@ -112,31 +112,35 @@ const App = () => {
 
 
   return (
-    <div>
-      <Header 
-          welcome={welcome}
-          title={title}
-          subtitle={subtitle}
-          firstname={firstname}
-          lastname={lastname}
-          date={date}
-      />
-      <User firstname="Abhishek" lastname="Yadav" country="India" />
-      <Age age={age} />
-      <Weight weight={weight * 2} />
-      <Status status={status} />
-      <Skills skills={['HTML', 'CSS', 'JavaScript']} /> 
-      <Head data={data} />
-      <Head data={{
-        welcome: "Hello",
-        title: "Bye",
-        subtitle: "Go Home"
-      }} />
+   <div className="space-y-4">
+  <Header
+    welcome={welcome}
+    title={title}
+    subtitle={subtitle}
+    firstname={firstname}
+    lastname={lastname}
+    date={date}
+  />
 
-      <Button text="Hello from button" onClick={helloIndore} />
+  <User firstname="Abhishek" lastname="Yadav" country="India" />
+  <Age age={age} />
+  <Weight weight={weight * 2} />
+  <Status status={status} />
+  <Skills skills={['HTML', 'CSS', 'JavaScript']} />
 
+  {/* Dynamic and inline prop passing */}
+  <Head data={data} />
+  <Head
+    data={{
+      welcome: 'Hello',
+      title: 'Bye',
+      subtitle: 'Go Home',
+    }}
+  />
 
-    </div>
+  <Button text="Hello from button" onClick={helloIndore} />
+</div>
+
   )
 }
 
