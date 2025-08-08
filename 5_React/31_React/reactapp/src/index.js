@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App';
 
-// JSX element
-const jsxElement = <h1>This is the First React App</h1>;
+// Grab the root DOM element (non-null assertion because we know it exists)
+const rootElement = document.getElementById('root')!;
+const root = ReactDOM.createRoot(rootElement);
 
-// Create root and render the JSX element
-const root = ReactDOM.createRoot(document.getElementById('root')!);
-root.render(jsxElement);
+// Render the app wrapped in StrictMode for dev warnings
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
